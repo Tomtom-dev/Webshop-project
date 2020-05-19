@@ -8,7 +8,7 @@ export default function HeaderLink() {
         style={{
           textDecoration: "none",
           color: "#2c7624",
-          textAlign:"left"
+          textAlign:"left",
         }}
         to="/"
         exact
