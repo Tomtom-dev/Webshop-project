@@ -1,24 +1,24 @@
 const initialState={
-    "Man" : [
-        {
-            "id": 1,
-            "category": "shirt",
-            "color": ["Black", "White", "Grey"],
-            "price": 15,
-            "bought": 88,
-            "imageUrl": "https://m.media-amazon.com/images/I/61DpD9hTcmL._AC_UL320_.jpg"
-        },
-        {
-            "id": 2,
-            "category": "jean",
-            "color": ["Blue", "Black", "grey"],
-            "price": 50,
-            "bought": 15,
-            "imageUrl": "https://img1.g-star.com/product/c_fill,f_auto,h_620,q_80/v1526025363/D01159-8968-6028-Z01W/g-star-raw-3301-deconstructed-skinny-jeans-midden-blauw.jpg"
-        }
-       ], 
+        "man" : [
+            {
+                "id": 1,
+                "category": "shirt",
+                "color": ["Black", "White", "Grey"],
+                "price": 15,
+                "bought": 88,
+                "imageUrl": "https://m.media-amazon.com/images/I/61DpD9hTcmL._AC_UL320_.jpg"
+            },
+            {
+                "id": 2,
+                "category": "jean",
+                "color": ["Blue", "Black", "grey"],
+                "price": 50,
+                "bought": 15,
+                "imageUrl": "https://img1.g-star.com/product/c_fill,f_auto,h_620,q_80/v1526025363/D01159-8968-6028-Z01W/g-star-raw-3301-deconstructed-skinny-jeans-midden-blauw.jpg"
+            }
+        ], 
     
-       "Woman" :[
+       "woman" :[
            {
             "id": 1,
             "category": "shirt",
@@ -49,12 +49,12 @@ const initialState={
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case "ADD_PIZZA": {
+        case "ADD_ARTICLE": {
         // => Ask yourself: what is action.payload?
         return {
         ...state,
-        pizzas: [
-        ...state.pizzas,
+        clothe : [
+        ...state.man.id,
         {
             id: action.payload.id,
             name: action.payload.name,

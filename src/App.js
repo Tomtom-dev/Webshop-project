@@ -10,11 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/ProductPage/:id" component={ProductPage} />
-          <Route path="/CartPage" component={CartPage} />
-        </Switch> 
+      
     </div>
   );
 }

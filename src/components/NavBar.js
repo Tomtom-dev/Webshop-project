@@ -1,20 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 export default function HeaderLink() {
   return (
-    <div className="HeaderLink">
-      <NavLink
-        style={{
-          textDecoration: "none",
-          color: "#2c7624",
-          textAlign:"left",
-        }}
-        to="/"
-        exact
-      >
-        <h2>Clothes Shop</h2>
-      </NavLink>
+    <div className="Navbar">
+      
+        
+      <nav>
+        <ul>
+          <h2 style={{marginLeft:"5%", textAlign: "left", backgroundColor:"lightblue"}}>Clothes Shop </h2>
+          
+        </ul>
+        
+      </nav>
+        
     </div>
   );
 }
