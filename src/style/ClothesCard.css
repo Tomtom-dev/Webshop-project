@@ -1,0 +1,9 @@
+.ClothesCard {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  border: 2px solid #669a60;
+  box-shadow: 2px 2px 3px #669a60;
+  width: 30%;
+  background-color: #d7e7d6;
+}
