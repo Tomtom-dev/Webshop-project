@@ -15,7 +15,6 @@ export default function Header() {
         <Link to="/cart">
           <button>Cart</button>
         </Link>
-        <p>Shoppingcart contains X items</p>
       </header>
     </div>
   );

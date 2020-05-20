@@ -9,14 +9,22 @@ import "../style/ClothesCard.css";
 export default function ClothesCard(props) {
   // const clothes = useSelector(selectArticle);
   // console.log("clothes in component", clothes);
-  const { id, name, category, price } = props;
+  const { id, name, category, price, imageUrl } = props;
 
   return (
     <div key={id} className="ClothesCard">
-      <h3>{name}</h3>
-      {price}
-      {category}
-      <br />
+      <img src={imageUrl} alt="Article thumbnail" className="myImage" />
+      <div className="productInfo">
+        <p>
+          <b>{name}</b>
+          <br />€ {price},
+          <br />
+          {category}
+        </p>
+        <a href="#" className="myButton">
+          Add to cart
+        </a>
+      </div>
     </div>
   );
 }

@@ -54,7 +54,13 @@ const initialState = {
         "https://img1.g-star.com/product/c_fill,f_auto,h_620,q_80/v1583925174/D17055-C322-B575-Z01W/g-star-raw-utility-wrap-mini-rok-grijs.jpg",
     },
   ],
+  shoppingCart: {
+    totalPrice: 0,
+    quantity: 0,
+  },
 };
+
+//ADD_ARTICLE REMOVE_ARTICLE
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
