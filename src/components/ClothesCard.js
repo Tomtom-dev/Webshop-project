@@ -12,19 +12,19 @@ export default function ClothesCard(props) {
   const { id, name, category, price, imageUrl } = props;
 
   return (
-    <div key={id} className="ClothesCard">
-      <img src={imageUrl} alt="Article thumbnail" className="myImage" />
-      <div className="productInfo">
-        <p>
-          <b>{name}</b>
-          <br />€ {price},
-          <br />
-          {category}
-        </p>
-        <a href="#" className="myButton">
-          Add to cart
-        </a>
-      </div>
-    </div>
+  <div key={id} className="ClothesCard">
+        <img src={imageUrl} alt="Article thumbnail" className="myImage" />
+        <div className="productInfo">
+          <p>
+            <b>{name}</b>
+            <br />€ {price},
+            <br />
+            {category}
+          </p>
+          <a href="#" className="myButton">
+            Add to cart
+          </a>
+        </div>
+  </div>
   );
 }
