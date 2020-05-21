@@ -62,7 +62,7 @@ const initialState = {
 
 //ADD_ARTICLE REMOVE_ARTICLE
 
-export default function reducer(state = initialState, action) {
+export default function productReducer(state = initialState, action) {
   switch (action.type) {
     
     
