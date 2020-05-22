@@ -58,14 +58,18 @@ const initialState = {
     totalPrice: 0,
     quantity: 0,
   },
+  list:[]
 };
 
 //ADD_ARTICLE REMOVE_ARTICLE
 
 export default function productReducer(state = initialState, action) {
   switch (action.type) {
-    
-    
+    case "PRODUCT_FETCH": // i got a list of product to save (on action.payload)
+      return{
+        ...state,
+        list: [...action.payload], 
+      }
     default: {
       return state;
     }

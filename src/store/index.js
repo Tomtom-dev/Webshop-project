@@ -1,5 +1,5 @@
 import { createStore,compose,applyMiddleware } from "redux";
-import reducer from "./reducer";
+import reducer from "./rootReducers";
 import ReduxThunk from  "redux-thunk"
 
 const devTools =
