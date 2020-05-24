@@ -2,7 +2,7 @@ const initialState = {
   manClothing: [
     {
       id: 1,
-      name: "Simple shirt",
+      name: "Simple shirtss",
       category: "shirt",
       color: ["Black", "White", "Grey"],
       price: 15,
@@ -64,12 +64,11 @@ const initialState = {
 //ADD_ARTICLE REMOVE_ARTICLE
 
 export default function productReducer(state = initialState, action) {
+  // console.log('test for reducer', action);
   switch (action.type) {
     case "PRODUCT_FETCH": // i got a list of product to save (on action.payload)
-      return{
-        ...state,
-        list: [...action.payload], 
-      }
+    // console.log('test before the return',state);
+      return action.payload
     default: {
       return state;
     }

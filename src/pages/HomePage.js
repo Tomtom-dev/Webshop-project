@@ -7,27 +7,33 @@ import '../style/HomePage.css'
 import ClothesCard from "../components/ClothesCard";
 
 export default function HomePage() {
-  let [clothes, setClothes] = useState([]);
-  const [clothesWoman, setClothesWoman] = useState([]);
-  const [clothesMan, setClothesMan] = useState([]);
-  const [sort_by, set_sort_by] = useState([]); 
-  const reduxProducts =useSelector(getAllProducts)
 
+  const [sort_by, set_sort_by] = useState([]); 
+
+  const [Products, setProducts] = useState([])
+
+  const reduxProducts =useSelector(getAllProducts)
   const dispatch= useDispatch();
 
+  console.log('products in component',reduxProducts.manClothing);
+  
+
   useEffect(() => {
-    dispatch(fetchProducts())
+    dispatch(fetchProducts()) // dipatch here to avoid infinite loop
   }, []);
 
-  clothes = [...clothesMan, ...clothesWoman];
-  const clothesArrayCopy = [...clothes];
+
+  const ArrayOfProducts = [...reduxProducts.manClothing,...reduxProducts.womanClothing]
+  const copyArrayProduct = [...ArrayOfProducts]
+  // console.log('final review ', copyArrayProduct)
+ 
 
   // console.log("the DATA",clothesArrayCopy);
   
   function sortedByPrice (){
     const comparePrice = function(priceA,priceB){
       return priceA.price - priceB.price }
-    const sortedByPrice = clothesArrayCopy.sort(comparePrice)
+    const sortedByPrice = copyArrayProduct.sort(comparePrice)
     // console.log('price', sortedByPrice);
     return sortedByPrice;
   }
@@ -35,7 +41,7 @@ export default function HomePage() {
   function popularity (){
     const comparePopularity = function( boughtA,boughtB){
       return boughtB.bought - boughtA.bought;}
-      const sortedByPopularity= clothesArrayCopy.sort(comparePopularity)
+      const sortedByPopularity= copyArrayProduct.sort(comparePopularity)
       // console.log('pop', sortedByPopularity);
       return sortedByPopularity;
     }
