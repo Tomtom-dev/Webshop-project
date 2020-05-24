@@ -18,7 +18,6 @@ export const fetchProducts = () => async (dispatch, getState) => {
         const data = await Axios.get(
             "https://my-json-server.typicode.com/Tomtom-dev/JsonFileWebShop/db"
           );
-        //   console.log('data in thunk action', data.data);
           dispatch(productsFetched(data.data))
     } catch (error) {
         console.log(error);
