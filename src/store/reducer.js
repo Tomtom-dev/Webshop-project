@@ -24,7 +24,7 @@ const initialState = {
 
   womanClothing: [
     {
-      id: 1,
+      id: 3,
       name: "Simple shirt",
       category: "shirt",
       color: ["Blue", "Black", "Grey"],
@@ -34,7 +34,7 @@ const initialState = {
         "https://img1.g-star.com/product/c_fill,f_auto,h_620,q_80/v1586506206/D05175-8968-6028-Z01W/g-star-raw-3301-high-waist-skinny-jeans-midden-blauw.jpg",
     },
     {
-      id: 2,
+      id: 4,
       name: "Long dress",
       category: "dress",
       color: ["White", "Black", "Grey"],
@@ -44,7 +44,7 @@ const initialState = {
         "https://img1.g-star.com/product/c_fill,f_auto,h_620,q_80/v1581435726/D17459-5864-8121-Z01W/g-star-raw-cergy-zip-slim-jurk-midden-blauw.jpg",
     },
     {
-      id: 3,
+      id: 5,
       name: "Mini skirt",
       category: "skirt",
       color: ["Grey", "Red"],

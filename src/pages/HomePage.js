@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux"
 import { fetchProducts } from '../store/action'
 import {getAllProducts} from '../store/selectors'
+import {addToCart} from '../cart/action'
 import '../style/HomePage.css'
 
 import ClothesCard from "../components/ClothesCard";
@@ -10,25 +11,17 @@ export default function HomePage() {
 
   const [sort_by, set_sort_by] = useState([]); 
 
-  const [Products, setProducts] = useState([])
-
   const reduxProducts =useSelector(getAllProducts)
   const dispatch= useDispatch();
 
-  console.log('products in component',reduxProducts.manClothing);
+  // console.log('products in component',reduxProducts.manClothing);
   
-
   useEffect(() => {
     dispatch(fetchProducts()) // dipatch here to avoid infinite loop
-  }, []);
-
+  }, [dispatch]);
 
   const ArrayOfProducts = [...reduxProducts.manClothing,...reduxProducts.womanClothing]
   const copyArrayProduct = [...ArrayOfProducts]
-  // console.log('final review ', copyArrayProduct)
- 
-
-  // console.log("the DATA",clothesArrayCopy);
   
   function sortedByPrice (){
     const comparePrice = function(priceA,priceB){
@@ -53,6 +46,11 @@ export default function HomePage() {
 
     const playersSorted = (sort_by === "Popularitity") ? popularity() :sortedByPrice()
 
+    function onAddClick (product){
+      console.log('trying to add product ', product);
+      
+      dispatch(addToCart(product))
+    }
   
   return (
     <div>
@@ -62,8 +60,6 @@ export default function HomePage() {
               <option value="priceOrder" >price</option> | 
               <option value="Popularitity" >popularity</option>
         </select>
-        {/* <button onClick={sortedByPrice}>Price</button>
-        <button onClick={popularity}>popularity</button> */}
         
       </p>
       {playersSorted.map((item) => {
@@ -74,6 +70,7 @@ export default function HomePage() {
               name={item.name}
               category={item.category}
               price={item.price}
+              onAddClick ={() => onAddClick(item)}
             />
             <br />
           </div>

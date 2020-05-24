@@ -21,9 +21,13 @@ export default function ClothesCard(props) {
             <br />
             {category}
           </p>
-          <a href="#" className="myButton">
+          <button className="myButton" onClick={() => console.log('add to cart')}
+          onClick={props.onAddClick}>
             Add to cart
-          </a>
+          </button>
+          <button className="myButton" onClick={() => console.log('remove from cart')}>
+            Remove
+          </button>
         </div>
   </div>
   );
